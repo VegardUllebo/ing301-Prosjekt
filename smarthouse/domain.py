@@ -1,3 +1,4 @@
+
 class Measurement:
     """
     This class represents a measurement taken from a sensor.
@@ -100,26 +101,31 @@ class Device:
 
 
     def is_actuator():      # Retunerer bool true visst device er aktuator    
-        check = false
+        check = False
 
-        if Sensor_Aktuator == "Aktuator":
-            check=true
+        if Device.Sensor_Aktuator == "Aktuator":
+            check=True
             return check
         return check
         
 
     def is_sensor():        # Returnerer bool true visst device er sensor        
-        check = false
+        check = False
 
-        if Sensor_Aktuator == "Sensor":
-            check = true
+        if Device.Sensor_Aktuator == "Sensor":
+            check = True
             return check
         return check
 
     def get_device_type():  # Skal returnere string som svar med konkret ka type det er f.eks "heatPump", "smart Lock" osv
-        svar = typeEnhet
+        svar = Device.typeEnhet
         return svar
-
+    
+    def turn_on():          # ingen vet ka som skjer her vertfall, Roar som har konstruert detta lørdagskveld. -Vegard
+        if is_actuator() == True:
+            Aktuator.turn_on()
+    
+     
     def last_measurement():
          #
         """
@@ -131,12 +137,20 @@ class Device:
         pass
 
 
-
-
-
-
     def last_measurement():
         return measurement
     
+
+
+class Aktuator(Device): #Skal arve fra device
+    def __init__(self, deviceState, setPunkt ) -> None:
+        self.deviceState = deviceState  #DeviceState er string on/off
+        self.setPunkt = setPunkt        #setpunkt er int 0-100
+
+    def turn_on():
+        deviceState = "On"
+        
+    def turn_off():
+        DeviceState = "Off"
 
     
