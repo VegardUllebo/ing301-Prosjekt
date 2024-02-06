@@ -2,7 +2,7 @@ class Measurement:
     """
     This class represents a measurement taken from a sensor.
     Her skal vi legge inn våres klasser og utvide den eksisterende koden.
-    
+    Device_id - dato - klokkeslett - verdi - måleenhet
     """
 
     def __init__(self, timestamp, value, unit):
@@ -32,8 +32,8 @@ class SmartHouse:
         This method registers a new floor at the given level in the house
         and returns the respective floor object.        
         """
-        level = self.level
-        return level
+        pass
+        
 
     def register_room(self, floor, room_size, room_name = None):
         """
@@ -124,6 +124,9 @@ class Device:
          #
         """
         Skal returnere ett objekt av type Measurment.
+        Målenheten i målingen skal samsvare med måleenheten av sensoren (f.eks. måler en temperaturmåler in enheten celsius: "°C"). 
+        For verdien kan du velge en helt tilfeldig numerisk verdi (du kan f.eks. bruke random modulen) 
+        og timestamp skal være en tekstuell representasjon av et tidspunkt (du kan f.eks. bruke ISO-8601).
         """ 
         pass
 
