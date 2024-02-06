@@ -1,6 +1,8 @@
 class Measurement:
     """
     This class represents a measurement taken from a sensor.
+    Her skal vi legge inn våres klasser og utvide den eksisterende koden.
+    
     """
 
     def __init__(self, timestamp, value, unit):
@@ -14,6 +16,8 @@ class Measurement:
 
 
 class SmartHouse:
+
+
     """
     This class serves as the main entity and entry point for the SmartHouse system app.
     Do not delete this class nor its predefined methods since other parts of the
@@ -26,14 +30,17 @@ class SmartHouse:
     def register_floor(self, level):
         """
         This method registers a new floor at the given level in the house
-        and returns the respective floor object.
+        and returns the respective floor object.        
         """
+        level = self.level
+        return level
 
     def register_room(self, floor, room_size, room_name = None):
         """
         This methods registers a new room with the given room areal size 
         at the given floor. Optionally the room may be assigned a mnemonic name.
         """
+
         pass
 
 
@@ -74,3 +81,54 @@ class SmartHouse:
         """
         pass
 
+class Bygning:
+    pass
+
+class Etasje:
+    pass
+
+class Device:
+    
+    def __init__(self, device_id, id, supplier, model_name , typeEnhet, huskeNavnEnhet) -> None:
+        self.device_id = device_id
+        self.id = id
+        self.supplier = supplier
+        self.model_name  = model_name 
+        self.typeEnhet = typeEnhet # String enten Aktuator/Sensor
+        self.huskeNavnEnhet = huskeNavnEnhet
+
+
+    def is_actuator():      # Retunerer bool true visst device er aktuator    
+        check = false
+
+        if typeEnhet == "Aktuator":
+            check=true
+            return check
+        return check
+        
+
+    def is_sensor():        # Returnerer bool true visst device er sensor        
+        check = false
+
+        if typeEnhet == "Sensor":
+            check = true
+            return check
+        return check
+
+    def get_device_type():  # Skal returnere string som svar med konkret ka type det er f.eks "heatPump", "smart Lock" osv
+        svar = huskeNavnEnhet
+        return svar
+
+    def last_measurement(): # Skal returnere ett objekt av type Measurment.
+        pass
+
+
+
+
+
+
+    def last_measurement():
+        return measurement
+    
+
+    
