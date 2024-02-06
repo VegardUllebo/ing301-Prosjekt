@@ -89,19 +89,20 @@ class Etasje:
 
 class Device:
     
-    def __init__(self, device_id, id, supplier, model_name , typeEnhet, huskeNavnEnhet) -> None:
+    def __init__(self, device_id, id, supplier, model_name , typeEnhet, huskeNavnEnhet, Sensor_Aktuator) -> None:
         self.device_id = device_id
         self.id = id
         self.supplier = supplier
         self.model_name  = model_name 
         self.typeEnhet = typeEnhet # String enten Aktuator/Sensor
         self.huskeNavnEnhet = huskeNavnEnhet
+        self.Sensor_Aktuator = Sensor_Aktuator # Denne kan lett skifte navn seinare
 
 
     def is_actuator():      # Retunerer bool true visst device er aktuator    
         check = false
 
-        if typeEnhet == "Aktuator":
+        if Sensor_Aktuator == "Aktuator":
             check=true
             return check
         return check
@@ -110,16 +111,20 @@ class Device:
     def is_sensor():        # Returnerer bool true visst device er sensor        
         check = false
 
-        if typeEnhet == "Sensor":
+        if Sensor_Aktuator == "Sensor":
             check = true
             return check
         return check
 
     def get_device_type():  # Skal returnere string som svar med konkret ka type det er f.eks "heatPump", "smart Lock" osv
-        svar = huskeNavnEnhet
+        svar = typeEnhet
         return svar
 
-    def last_measurement(): # Skal returnere ett objekt av type Measurment.
+    def last_measurement():
+         #
+        """
+        Skal returnere ett objekt av type Measurment.
+        """ 
         pass
 
 
