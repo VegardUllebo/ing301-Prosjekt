@@ -88,8 +88,9 @@ class SmartHouse:
 
 
     def get_area(self):
+        total_area = sum(room['room_size'] for room in self.rooms)
+        return total_area
         
-        return [room for room in self.rooms if room['floor'] == floor]
         """
         This methods return the total area size of the house, i.e. the sum of the area sizes of each room in the house.
         """
