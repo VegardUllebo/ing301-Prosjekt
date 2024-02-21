@@ -18,7 +18,7 @@ class Measurement:
 
 class SmartHouse:
 
-
+    counterFloor=0
     """
     This class serves as the main entity and entry point for the SmartHouse system app.
     Do not delete this class nor its predefined methods since other parts of the
@@ -33,7 +33,8 @@ class SmartHouse:
         This method registers a new floor at the given level in the house
         and returns the respective floor object.        
         """
-        pass
+        self.level = level        
+        print("Antal etasjer generert", level)
         
 
     def register_room(self, floor, room_size, room_name = None):
@@ -42,7 +43,10 @@ class SmartHouse:
         at the given floor. Optionally the room may be assigned a mnemonic name.
         """
 
-        pass
+        self.floor = floor
+        self.room_size = room_size
+        self.room_name = room_name
+        print("Rom registrert", floor, room_size, room_name)
 
 
     def get_floors(self):
@@ -52,6 +56,7 @@ class SmartHouse:
         registered a basement (level=0), a ground floor (level=1) and a first floor 
         (leve=1), then the resulting list contains these three flors in the above order.
         """
+        
         pass
 
 
@@ -82,11 +87,22 @@ class SmartHouse:
         """
         pass
 
+"""
 class Bygning:
-    pass
+    def __init__(self, rooms) -> None:
+        self.rooms = rooms
+    
+    def register_floor():        
+        print("Floor register")
+    
+    
 
 class Etasje:
-    pass
+    def __init__(self, number) -> None:
+        self.number = number
+
+    def register_room(floor, areal, name):        
+        print("Room Registered")
 
 class Device:
     
@@ -128,12 +144,12 @@ class Device:
      
     def last_measurement():
          #
-        """
+        
         Skal returnere ett objekt av type Measurment.
         Målenheten i målingen skal samsvare med måleenheten av sensoren (f.eks. måler en temperaturmåler in enheten celsius: "°C"). 
         For verdien kan du velge en helt tilfeldig numerisk verdi (du kan f.eks. bruke random modulen) 
         og timestamp skal være en tekstuell representasjon av et tidspunkt (du kan f.eks. bruke ISO-8601).
-        """ 
+        
         pass
 
 
@@ -152,5 +168,4 @@ class Aktuator(Device): #Skal arve fra device
         
     def turn_off():
         DeviceState = "Off"
-
-    
+"""
