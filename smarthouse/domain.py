@@ -82,10 +82,8 @@ class SmartHouse:
         "Modellnavn": "Aqua Alert 800"
     },
     
-]
-
-
-        
+        ]
+       
         
 
     def register_room(self, floor, room_size, room_name = None):

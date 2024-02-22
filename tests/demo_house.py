@@ -6,6 +6,9 @@ DEMO_HOUSE = SmartHouse()
 Her skal dere bygge opp "demohuset" ved å bruke våres klasser
 """
 
+#Register all of the information of the devices used in the house
+DEMO_HOUSE.register_all_device()
+
 # Building house structure
 ground_floor   = DEMO_HOUSE.register_floor(1)
 second_floor   = DEMO_HOUSE.register_floor(2)
