@@ -15,12 +15,16 @@ bathroom1      = DEMO_HOUSE.register_room (ground_floor, 6.3,  "Bathroom 1")
 livingKitchen  = DEMO_HOUSE.register_room (ground_floor, 39.75,"LivingRoom/Kitchen")
 Garage         = DEMO_HOUSE.register_room (ground_floor, 19,   "Garage")
 hallway        = DEMO_HOUSE.register_room (second_floor, 10,   "Hallway")
-Office         = DEMO_HOUSE.register_room (second_floor, 1,    "Office")
+office         = DEMO_HOUSE.register_room (second_floor, 11.75,"Office")
 bathroom2      = DEMO_HOUSE.register_room (second_floor, 9.25, "Bathroom 2")
 guestroom2     = DEMO_HOUSE.register_room (second_floor, 8,    "Guest Room 2")
 guestroom3     = DEMO_HOUSE.register_room (second_floor, 10,   "Guest Room 3")
 dressingroom   = DEMO_HOUSE.register_room (second_floor, 4,    "Dressing Room")
 Master_bedroom = DEMO_HOUSE.register_room (second_floor, 17,   "Master Bedroom")
+
+# Building sensor structure
+
+DEMO_HOUSE.register_device(livingKitchen, )
 
 listOffFloors = DEMO_HOUSE.get_floors()
 totalArea = DEMO_HOUSE.get_area()
