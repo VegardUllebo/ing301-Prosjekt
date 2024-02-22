@@ -39,51 +39,6 @@ class SmartHouse:
         self.level = level 
         print("Etasje Generert: ", level)       
         return level
-    
-    def register_all_device(self):
-        """
-        Here we will register all off the device information needed for the smarthouse in a dictonary
-        """
-        data = [
-    {
-        "Identifikator": "4d5f1ac6-906a-4fd1-b4bf-3a0671e4c4f1",
-        "Enhet": "Smart Lock",
-        "Produsent": "MythicalTech",
-        "Modellnavn": "Guardian Lock 7000"
-    },
-    {
-        "Identifikator": "8a43b2d7-e8d3-4f3d-b832-7dbf37bf629e",
-        "Enhet": "CO2 sensor",
-        "Produsent": "ElysianTech",
-        "Modellnavn": "Smoke Warden 1000"
-    },
-    {
-        "Identifikator": "a2f8690f-2b3a-43cd-90b8-9deea98b42a7",
-        "Enhet": "Electricity Meter",
-        "Produsent": "MysticEnergy Innovations",
-        "Modellnavn": "Volt Watch Elite"
-    },
-    {
-        "Identifikator": "5e13cabc-5c58-4bb3-82a2-3039e4480a6d",
-        "Enhet": "Heat Pump",
-        "Produsent": "ElysianTech",
-        "Modellnavn": "Thermo Smart 6000"
-    },
-    {
-        "Identifikator": "cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5",
-        "Enhet": "Motion Sensor",
-        "Produsent": "NebulaGuard Innovations",
-        "Modellnavn": "MoveZ Detect 69"
-    },
-    {
-        "Identifikator": "3d87e5c0-8716-4b0b-9c67-087eaaed7b45",
-        "Enhet": "Humidity Sensor",
-        "Produsent": "AetherCorp",
-        "Modellnavn": "Aqua Alert 800"
-    },
-    
-        ]
-       
         
 
     def register_room(self, floor, room_size, room_name = None):
@@ -157,7 +112,7 @@ class SmartHouse:
         self.device_id = device_id
         pass
 
-"""
+
 class Bygning:
     def __init__(self, rooms) -> None:
         self.rooms = rooms
@@ -176,14 +131,14 @@ class Etasje:
 
 class Device:
     
-    def __init__(self, device_id, id, supplier, model_name , typeEnhet, huskeNavnEnhet, Sensor_Aktuator) -> None:
+    def __init__(self, device_id, device, manifactor, modell_name, typeOfDevice, rememberNameDevice, Sensor_Actuator) -> None:
         self.device_id = device_id
-        self.id = id
-        self.supplier = supplier
-        self.model_name  = model_name 
-        self.typeEnhet = typeEnhet # String enten Aktuator/Sensor
-        self.huskeNavnEnhet = huskeNavnEnhet
-        self.Sensor_Aktuator = Sensor_Aktuator # Denne kan lett skifte navn seinare
+        self.device = device
+        self.manifactor = manifactor
+        self.modell_name = modell_name
+        self.typeOfDevice = typeOfDevice # String enten Aktuator/Sensor
+        self.rememberNameDevice = rememberNameDevice
+        self.Sensor_Actuator = Sensor_Actuator # Denne kan lett skifte navn seinare
 
 
     def is_actuator():      # Retunerer bool true visst device er aktuator    
@@ -207,12 +162,12 @@ class Device:
         svar = Device.typeEnhet
         return svar
     
-    def turn_on():          # ingen vet ka som skjer her vertfall, Roar som har konstruert detta lørdagskveld. -Vegard
+"""    def turn_on():          # ingen vet ka som skjer her vertfall, Roar som har konstruert detta lørdagskveld. -Vegard
         if is_actuator() == True:
-            Aktuator.turn_on()
+            Aktuator.turn_on()"""
     
      
-    def last_measurement():
+"""    def last_measurement():
          #
         
         Skal returnere ett objekt av type Measurment.
@@ -224,7 +179,7 @@ class Device:
 
 
     def last_measurement():
-        return measurement
+        return measurement"""
     
 
 
@@ -238,4 +193,3 @@ class Aktuator(Device): #Skal arve fra device
         
     def turn_off():
         DeviceState = "Off"
-"""
