@@ -21,6 +21,7 @@ class SmartHouse:
     def __init__(self):
         # Assuming this structure for storing room details
         self.rooms = []  # Each item could be a dict with keys like 'floor', 'room_size', 'room_name'
+        self.deviceList = [] # list of devices.
     """
     This class serves as the main entity and entry point for the SmartHouse system app.
     Do not delete this class nor its predefined methods since other parts of the
@@ -38,6 +39,52 @@ class SmartHouse:
         self.level = level 
         print("Etasje Generert: ", level)       
         return level
+    
+    def register_all_device():
+        """
+        Here we will register all off the device information needed for the smarthouse in a dictonary
+        """
+        data = [
+    {
+        "Identifikator": "4d5f1ac6-906a-4fd1-b4bf-3a0671e4c4f1",
+        "Enhet": "Smart Lock",
+        "Produsent": "MythicalTech",
+        "Modellnavn": "Guardian Lock 7000"
+    },
+    {
+        "Identifikator": "8a43b2d7-e8d3-4f3d-b832-7dbf37bf629e",
+        "Enhet": "CO2 sensor",
+        "Produsent": "ElysianTech",
+        "Modellnavn": "Smoke Warden 1000"
+    },
+    {
+        "Identifikator": "a2f8690f-2b3a-43cd-90b8-9deea98b42a7",
+        "Enhet": "Electricity Meter",
+        "Produsent": "MysticEnergy Innovations",
+        "Modellnavn": "Volt Watch Elite"
+    },
+    {
+        "Identifikator": "5e13cabc-5c58-4bb3-82a2-3039e4480a6d",
+        "Enhet": "Heat Pump",
+        "Produsent": "ElysianTech",
+        "Modellnavn": "Thermo Smart 6000"
+    },
+    {
+        "Identifikator": "cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5",
+        "Enhet": "Motion Sensor",
+        "Produsent": "NebulaGuard Innovations",
+        "Modellnavn": "MoveZ Detect 69"
+    },
+    {
+        "Identifikator": "3d87e5c0-8716-4b0b-9c67-087eaaed7b45",
+        "Enhet": "Humidity Sensor",
+        "Produsent": "AetherCorp",
+        "Modellnavn": "Aqua Alert 800"
+    },
+    
+]
+
+
         
         
 
@@ -100,13 +147,16 @@ class SmartHouse:
         """
         This methods registers a given device in a given room.
         """
-        pass
+        self.room = room
+        self.device = device
+        
 
     
     def get_device(self, device_id):
         """
         This method retrieves a device object via its id.
         """
+        self.device_id = device_id
         pass
 
 """
