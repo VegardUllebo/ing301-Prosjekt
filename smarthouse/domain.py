@@ -40,7 +40,7 @@ class SmartHouse:
         print("Etasje Generert: ", level)       
         return level
     
-    def register_all_device():
+    def register_all_device(self):
         """
         Here we will register all off the device information needed for the smarthouse in a dictonary
         """

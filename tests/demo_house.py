@@ -7,7 +7,7 @@ Her skal dere bygge opp "demohuset" ved å bruke våres klasser
 """
 
 #Register all of the information of the devices used in the house
-DEMO_HOUSE.register_all_device()
+test=DEMO_HOUSE.register_all_device()
 
 # Building house structure
 ground_floor   = DEMO_HOUSE.register_floor(1)
@@ -27,7 +27,7 @@ Master_bedroom = DEMO_HOUSE.register_room (second_floor, 17,   "Master Bedroom")
 
 # Building sensor structure
 
-DEMO_HOUSE.register_device(livingKitchen, )
+DEMO_HOUSE.register_device(livingKitchen,"cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
 
 listOffFloors = DEMO_HOUSE.get_floors()
 totalArea = DEMO_HOUSE.get_area()
