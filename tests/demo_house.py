@@ -28,22 +28,22 @@ Master_bedroom = DEMO_HOUSE.register_room (second_floor, 17,   "Master Bedroom")
 
 # Building sensor structure
 # First floor devices
-DEMO_HOUSE.register_device("Entrance","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
-DEMO_HOUSE.register_device("Entrance","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
-DEMO_HOUSE.register_device("Guest Room 1","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
-DEMO_HOUSE.register_device("Bathroom 1","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
-DEMO_HOUSE.register_device("LivingRoom/Kitchen","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
-DEMO_HOUSE.register_device("LivingRoom/Kitchen","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
-DEMO_HOUSE.register_device("LivingRoom/Kitchen","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
-DEMO_HOUSE.register_device("Garage","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
+DEMO_HOUSE.register_device("Entrance",           "a2f8690f-2b3a-43cd-90b8-9deea98b42a7")
+DEMO_HOUSE.register_device("Entrance",           "4d5f1ac6-906a-4fd1-b4bf-3a0671e4c4f1")
+DEMO_HOUSE.register_device("Guest Room 1",       "8d4e4c98-21a9-4d1e-bf18-523285ad90f6")
+DEMO_HOUSE.register_device("Bathroom 1",         "3d87e5c0-8716-4b0b-9c67-087eaaed7b45")
+DEMO_HOUSE.register_device("LivingRoom/Kitchen", "cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
+DEMO_HOUSE.register_device("LivingRoom/Kitchen", "5e13cabc-5c58-4bb3-82a2-3039e4480a6d")
+DEMO_HOUSE.register_device("LivingRoom/Kitchen", "8a43b2d7-e8d3-4f3d-b832-7dbf37bf629e")
+DEMO_HOUSE.register_device("Garage",             "4d5f1ac6-906a-4fd1-b4bf-3a0671e4c4f1")
 
 # Second floor devices
-DEMO_HOUSE.register_device("Office","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
-DEMO_HOUSE.register_device("Bathroom 2","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
-DEMO_HOUSE.register_device("Guest Room 2","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
-DEMO_HOUSE.register_device("Guest Room 3","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
-DEMO_HOUSE.register_device("Master Bedroom","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
-DEMO_HOUSE.register_device("Master Bedroom","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
+DEMO_HOUSE.register_device("Office",             "1a66c3d6-22b2-446e-bf5c-eb5b9d1a8c79")
+DEMO_HOUSE.register_device("Bathroom 2",         "9e5b8274-4e77-4e4e-80d2-b40d648ea02a")
+DEMO_HOUSE.register_device("Guest Room 2",       "6b1c5f6b-37f6-4e3d-9145-1cfbe2f1fc28")
+DEMO_HOUSE.register_device("Guest Room 3",       "7c6e35e1-2d8b-4d81-a586-5d01a03bb02c")
+DEMO_HOUSE.register_device("Master Bedroom",     "4d8b1d62-7921-4917-9b70-bbd31f6e2e8e")
+DEMO_HOUSE.register_device("Master Bedroom",     "c1e8fa9c-4b8d-487a-a1a5-2b148ee9d2d1")
 
 
 listOffFloors = DEMO_HOUSE.get_floors()
