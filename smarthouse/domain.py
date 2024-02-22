@@ -110,8 +110,7 @@ class SmartHouse:
         This method retrieves a device object via its id.
         """
         self.device_id = device_id
-        pass
-
+        
 
 class Bygning:
     def __init__(self, rooms) -> None:
@@ -126,25 +125,21 @@ class Etasje:
     def __init__(self, number) -> None:
         self.number = number
 
-    def register_room(floor, areal, name):        
-        print("Room Registered")
-
 class Device:
     
-    def __init__(self, device_id, device, manifactor, modell_name, typeOfDevice, rememberNameDevice, Sensor_Actuator) -> None:
+    def __init__(self, device_id, device, manifactor, modell_name, typeOfDevice, rememberNameDevice) -> None:
         self.device_id = device_id
         self.device = device
         self.manifactor = manifactor
         self.modell_name = modell_name
         self.typeOfDevice = typeOfDevice # String enten Aktuator/Sensor
         self.rememberNameDevice = rememberNameDevice
-        self.Sensor_Actuator = Sensor_Actuator # Denne kan lett skifte navn seinare
 
 
-    def is_actuator():      # Retunerer bool true visst device er aktuator    
+"""    def is_actuator():      # Retunerer bool true visst device er aktuator    
         check = False
 
-        if Device.Sensor_Aktuator == "Aktuator":
+        if Device.typeOfDevice == "Aktuator":
             check=True
             return check
         return check
@@ -153,14 +148,14 @@ class Device:
     def is_sensor():        # Returnerer bool true visst device er sensor        
         check = False
 
-        if Device.Sensor_Aktuator == "Sensor":
+        if Device.typeOfDevice == "Sensor":
             check = True
             return check
         return check
 
     def get_device_type():  # Skal returnere string som svar med konkret ka type det er f.eks "heatPump", "smart Lock" osv
-        svar = Device.typeEnhet
-        return svar
+        svar = Device.device
+        return svar"""
     
 """    def turn_on():          # ingen vet ka som skjer her vertfall, Roar som har konstruert detta lørdagskveld. -Vegard
         if is_actuator() == True:
