@@ -25,9 +25,26 @@ guestroom3     = DEMO_HOUSE.register_room (second_floor, 10,   "Guest Room 3")
 dressingroom   = DEMO_HOUSE.register_room (second_floor, 4,    "Dressing Room")
 Master_bedroom = DEMO_HOUSE.register_room (second_floor, 17,   "Master Bedroom")
 
-# Building sensor structure
 
-DEMO_HOUSE.register_device(livingKitchen,"cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
+# Building sensor structure
+# First floor devices
+DEMO_HOUSE.register_device("Entrance","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
+DEMO_HOUSE.register_device("Entrance","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
+DEMO_HOUSE.register_device("Guest Room 1","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
+DEMO_HOUSE.register_device("Bathroom 1","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
+DEMO_HOUSE.register_device("LivingRoom/Kitchen","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
+DEMO_HOUSE.register_device("LivingRoom/Kitchen","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
+DEMO_HOUSE.register_device("LivingRoom/Kitchen","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
+DEMO_HOUSE.register_device("Garage","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
+
+# Second floor devices
+DEMO_HOUSE.register_device("Office","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
+DEMO_HOUSE.register_device("Bathroom 2","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
+DEMO_HOUSE.register_device("Guest Room 2","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
+DEMO_HOUSE.register_device("Guest Room 3","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
+DEMO_HOUSE.register_device("Master Bedroom","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
+DEMO_HOUSE.register_device("Master Bedroom","cd5be4e8-0e6b-4cb5-a21f-819d06cf5fc5")
+
 
 listOffFloors = DEMO_HOUSE.get_floors()
 totalArea = DEMO_HOUSE.get_area()
