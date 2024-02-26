@@ -102,14 +102,21 @@ class SmartHouse:
         """
         self.room = room
         self.device = device
+        self.deviceList.append({'room': room , 'device': device})
         
 
     
-    def get_device(self, device_id):
+    def get_devices(self, device_id = None):
         """
         This method retrieves a device object via its id.
         """
-        self.device_id = device_id
+        if device_id is None:
+            # Return all rooms if no floor is specified
+            return self.deviceList
+        else:
+            # Return only the rooms on the specified floor
+            return [device for device  in self.deviceList if device['device'] == device]
+            
         
 
 class Bygning:
