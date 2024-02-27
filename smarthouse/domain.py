@@ -23,6 +23,7 @@ class Room:
     def __init__(self, room_size, room_name) -> None:
         self.room_size = room_size
         self.room_name = room_name
+        
 
         
     
@@ -30,6 +31,7 @@ class Room:
 class Floor:
     def __init__(self, level) -> None:
         self.level = level
+        self.rooms = []        #opretter liste for room i hver etasje
 
     def add_room(self, room: Room):
         self.rooms.append(room)
@@ -48,9 +50,10 @@ class SmartHouse:
 
     def __init__(self):
         # Assuming this structure for storing room details
-        self.rooms = []  # Each item could be a dict with keys like 'floor', 'room_size', 'room_name'
-        self.deviceList = [] # list of devices.
-        self.floors = []
+        # Each item could be a dict with keys like 'floor', 'room_size', 'room_name'
+        self.deviceList = []    #Liste over devices
+        self.floors = []        #Oppretter liste for etasjer i hvert hus
+        self.allRooms = []
         
         
     """
@@ -67,6 +70,7 @@ class SmartHouse:
         This method registers a new floor at the given level in the house
         and returns the respective floor object.        
         """
+        self.level = level
         new_floor = Floor(self.level)
         self.floors.append(new_floor)
         print("Etasje Generert: ", new_floor) 
@@ -81,13 +85,16 @@ class SmartHouse:
         at the given floor. Optionally the room may be assigned a mnemonic name.
         ikkje brukt - self.rooms.append({'floor': floor, 'room_size': room_size, 'room_name': room_name})
         """
-        new_room = Room(room_size, room_name)
-        self.floors[floor].add_room(new_room)
-        self.rooms.append(new_room)
-        return new_room
+        new_room = Room(room_size, room_name)         #Opretter Room
+        self.floors[floor-1].add_room(new_room)       # legger til i floors liste
+        #Floor.rooms.append(new_room)                 #legger til i rooms liste
+        self.allRooms.append(new_room)                #lager liste over alle rom
+
+        return new_room                               #Returnera objektet
        
 
     def get_floors(self):
+        """
         # Extracting the floor levels from each room
         floor_levels = [room['floor'] for room in self.rooms]
         # Removing duplicates by converting the list to a set, then back to a list
@@ -95,38 +102,50 @@ class SmartHouse:
         # Returning the sorted list of unique floor levels
         return sorted(unique_floor_levels)
 
-        """
+        
         This method returns the list of registered floors in the house.
         The list is ordered by the floor levels, e.g. if the house has 
         registered a basement (level=0), a ground floor (level=1) and a first floor 
         (leve=1), then the resulting list contains these three flors in the above order.
         """
         
-        pass
+        return self.floors
+        
 
 
     def get_rooms(self, floor = None):
+        """
         if floor is None:
             # Return all rooms if no floor is specified
             return self.rooms
         else:
             # Return only the rooms on the specified floor
             return [room for room in self.rooms if room['floor'] == floor]
-
-        """
+        
+        
         This methods returns the list of all registered rooms in the house.
         The resulting list has no particular order.
+        
         """
-        pass
+           
+                
+        
+        return self.allRooms
 
 
     def get_area(self):
+        """
         total_area = sum(room['room_size'] for room in self.rooms)
         return total_area
         
-        """
+        
         This methods return the total area size of the house, i.e. the sum of the area sizes of each room in the house.
         """
+        totalAreal=0.0
+        for areal in self.allRooms:
+            totalAreal = areal.room_size + totalAreal
+        
+        return totalAreal
 
 
     def register_device(self, room, device):

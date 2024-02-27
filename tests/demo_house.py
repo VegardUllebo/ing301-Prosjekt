@@ -69,18 +69,13 @@ DEMO_HOUSE.register_device("Master Bedroom",     device_list[13].device_id)
 
 
 
-listOffFloors = DEMO_HOUSE.get_floors()
+#listOffFloors = DEMO_HOUSE.get_floors()
 totalArea = DEMO_HOUSE.get_area()
 totalRooms = DEMO_HOUSE.get_rooms()
 
-print(totalRooms)
 print(totalArea)
-print(listOffFloors)
 
-"""print(DEMO_HOUSE.get_floors())
-"""
-
-
+#print(listOffFloors[1].level)
 
 # TODO: continue registering the remaining floor, rooms and devices
 
