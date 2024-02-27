@@ -16,12 +16,43 @@ class Measurement:
 # TODO: Add your own classes here!
 
 
+class Room:
+    """
+    Room er et rom i huset. Har areal og navn. Her kan en og registrere devices
+    """
+    def __init__(self, room_size, room_name) -> None:
+        self.room_size = room_size
+        self.room_name = room_name
+
+        
+    
+
+class Floor:
+    def __init__(self, level) -> None:
+        self.level = level
+
+    def add_room(self, room: Room):
+        self.rooms.append(room)
+
+class Device:
+    
+    def __init__(self, device_id, device, manifactor, modell_name, typeOfDevice, rememberNameDevice) -> None:
+        self.device_id = device_id
+        self.device = device
+        self.manifactor = manifactor
+        self.modell_name = modell_name
+        self.typeOfDevice = typeOfDevice # String enten Aktuator/Sensor
+        self.rememberNameDevice = rememberNameDevice
+
 class SmartHouse:
 
     def __init__(self):
         # Assuming this structure for storing room details
         self.rooms = []  # Each item could be a dict with keys like 'floor', 'room_size', 'room_name'
         self.deviceList = [] # list of devices.
+        self.floors = []
+        
+        
     """
     This class serves as the main entity and entry point for the SmartHouse system app.
     Do not delete this class nor its predefined methods since other parts of the
@@ -36,23 +67,25 @@ class SmartHouse:
         This method registers a new floor at the given level in the house
         and returns the respective floor object.        
         """
-        self.level = level 
-        print("Etasje Generert: ", level)       
-        return level
+        new_floor = Floor(self.level)
+        self.floors.append(new_floor)
+        print("Etasje Generert: ", new_floor) 
+        
+              
+        return new_floor
         
 
     def register_room(self, floor, room_size, room_name = None):
         """
         This methods registers a new room with the given room areal size 
         at the given floor. Optionally the room may be assigned a mnemonic name.
+        ikkje brukt - self.rooms.append({'floor': floor, 'room_size': room_size, 'room_name': room_name})
         """
-        self.rooms.append({'floor': floor, 'room_size': room_size, 'room_name': room_name})
-        """self.floor = floor
-        self.room_size = room_size
-        self.room_name = room_name
-        return floor, room_size, room_name
-        print("Rom registrert: ", floor, room_size, room_name)
-        """
+        new_room = Room(room_size, room_name)
+        self.floors[floor].add_room(new_room)
+        self.rooms.append(new_room)
+        return new_room
+       
 
     def get_floors(self):
         # Extracting the floor levels from each room
@@ -116,31 +149,21 @@ class SmartHouse:
         else:
             # Return only the rooms on the specified floor
             return [device for device  in self.deviceList if device['device'] == device]
-            
-        
 
+
+
+
+
+        
+"""
 class Bygning:
     def __init__(self, rooms) -> None:
         self.rooms = rooms
     
     def register_floor():        
         print("Floor register")
-    
-    
+"""
 
-class Etasje:
-    def __init__(self, number) -> None:
-        self.number = number
-
-class Device:
-    
-    def __init__(self, device_id, device, manifactor, modell_name, typeOfDevice, rememberNameDevice) -> None:
-        self.device_id = device_id
-        self.device = device
-        self.manifactor = manifactor
-        self.modell_name = modell_name
-        self.typeOfDevice = typeOfDevice # String enten Aktuator/Sensor
-        self.rememberNameDevice = rememberNameDevice
 
 
 """    def is_actuator():      # Retunerer bool true visst device er aktuator    
