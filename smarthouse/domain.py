@@ -56,6 +56,7 @@ class SmartHouse:
         self.allRooms = []
         
         
+        
     """
     This class serves as the main entity and entry point for the SmartHouse system app.
     Do not delete this class nor its predefined methods since other parts of the
@@ -151,38 +152,49 @@ class SmartHouse:
     def register_device(self, room, device):
         """
         This methods registers a given device in a given room.
+        self.deviceList.append({'room': room , 'device': device})
         """
         self.room = room
         self.device = device
-        self.deviceList.append({'room': room , 'device': device})
+        self.deviceList.append(device)
         
 
     
-    def get_devices(self, device_id = None):
+    def get_device_by_id(self, device_id = None):
         """
         This method retrieves a device object via its id.
-        """
+        return [device for device  in self.deviceList if device['device'] == device]
+       """
+        self.device_id = device_id
         if device_id is None:
             # Return all rooms if no floor is specified
             return self.deviceList
         else:
             # Return only the rooms on the specified floor
-            return [device for device  in self.deviceList if device['device'] == device]
+            for getDevice in self.deviceList:
+                if device_id == getDevice:
+                    return getDevice
+                
+                
+    def get_devices(self, device_id = None):
+        """
+        This method retrieves a device object via its id.
+
+        return [device for device  in self.deviceList if device['device'] == device]
+        """
+        self.device_id = device_id
+        if device_id is None:
+            # Return all rooms if no floor is specified
+            return self.deviceList
+        else:
+            # Return only the rooms on the specified floor
+            for getDevice in self.deviceList:
+                if device_id == getDevice:
+                    return getDevice
 
 
-
-
-
-        
-"""
-class Bygning:
-    def __init__(self, rooms) -> None:
-        self.rooms = rooms
-    
-    def register_floor():        
-        print("Floor register")
-"""
-
+            
+            
 
 
 """    def is_actuator():      # Retunerer bool true visst device er aktuator    

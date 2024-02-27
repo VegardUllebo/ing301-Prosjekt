@@ -4,8 +4,7 @@ from demo_house import DEMO_HOUSE as h
 
 """
 Målet til slutt er å få alle tester her til å bli grønne
-ChatGPT hjelper gjerne til sa han.
-Bare å spørre fint.
+
 """
 
 class TestPartA(TestCase):

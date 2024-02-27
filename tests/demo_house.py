@@ -72,8 +72,11 @@ DEMO_HOUSE.register_device("Master Bedroom",     device_list[13].device_id)
 #listOffFloors = DEMO_HOUSE.get_floors()
 totalArea = DEMO_HOUSE.get_area()
 totalRooms = DEMO_HOUSE.get_rooms()
+testDevice = DEMO_HOUSE.get_devices("4d8b1d62-7921-4917-9b70-bbd31f6e2e8e")
 
 print(totalArea)
+print(testDevice)
+
 
 #print(listOffFloors[1].level)
 
